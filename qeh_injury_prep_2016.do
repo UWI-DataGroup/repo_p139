@@ -6,7 +6,7 @@
     // 	date last modified	    4-NOV-2019
     //  algorithm task			
 
-HELLO NATASHA ...
+HELLO NATASHA ... A SECOND TIME
 
     ** General algorithm set-up
     version 16
