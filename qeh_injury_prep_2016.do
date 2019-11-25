@@ -6,6 +6,8 @@
     // 	date last modified	    4-NOV-2019
     //  algorithm task			
 
+HELLO NATASHA ...
+
     ** General algorithm set-up
     version 16
     clear all
