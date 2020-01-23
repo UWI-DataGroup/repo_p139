@@ -3,7 +3,7 @@
     //  algorithm name			qeh_injury_prep_combine.do
     //  project:				QEH Injury Dataset. Secondary analysis of available data
     //  analysts:				Ian HAMBLETON
-    // 	date last modified	    22-NOV-2019
+    // 	date last modified	    22-JAN-2020 (NS)
     //  algorithm task			
 
     ** General algorithm set-up
