@@ -33,7 +33,12 @@
 ** Full dataset 
 import excel using "`datapath'/version01/1-input/AED Log for January-December 2018.xlsx", first
 
+<<<<<<< HEAD
 drop P_FNUM C D E P_PHONE
+=======
+***Only file where P_LNAME etc are not named CDE
+drop P_FNUM P_LNAME P_FNAME P_NRN P_PHONE
+>>>>>>> d6611c826baf74c3c593040a463941665853ca13
 
 ** Unique identifier
 rename P_SNUM did 
@@ -221,6 +226,27 @@ order doc, after(PTGROUP)
 
 ** P_EPTIME
 ** Time the patient was seen 
+
+replace P_EPTIME = "" if P_EPTIME=="  :"
+gen hr_temp = substr(P_EPTIME,1,2)
+gen min_temp = substr(P_EPTIME,-2,.)
+gen tod_hr = real(hr_temp)
+gen tod_min = real(min_temp)
+gen tod1 = string(tod_hr)
+gen tod2 = string(tod_min)
+gen tod3 = tod1 + ":" + tod2
+ntimeofday tod3, gen(toc) s(h mi) n(hour) parse(:)
+split tod3, parse(:) gen(toc_)
+gen toc_hr = real(toc_1)
+gen toc_min = real(toc_2) 
+label var toc "Time patient seen as numeric (24-hr clock)" 
+label var toc_hr "Hour patient seen (24-hr clock)"
+label var toc_min "Minute patient seen"
+order toc toc_hr toc_min, after(doc)
+drop hr_temp min_temp tod_hr tod_min  tod1 tod2 tod3
+
+/*
+
 ntimeofday P_EPTIME, gen(toc) s(h mi) n(hour) parse(:)
 split P_EPTIME, parse(:) gen(toc_)
 gen toc_hr = real(toc_1)
@@ -229,7 +255,7 @@ label var toc "Time patient seen as numeric (24-hr clock)"
 label var toc_hr "Hour patient seen (24-hr clock)"
 label var toc_min "Minute patient seen"
 order toc toc_hr toc_min, after(doc)
-
+*/
 ** P_DOCTOR 
 ** Attending Doctor 
 * ! Is this of interest - need INITIALS defined

@@ -6,6 +6,10 @@
     // 	date last modified	    4-NOV-2019
     //  algorithm task			
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d6611c826baf74c3c593040a463941665853ca13
 
     ** General algorithm set-up
     version 16
@@ -121,6 +125,7 @@ order amode, after(toa_min)
 
 * ! P_VIS 
 * ! Final definition for this
+* ! The data dictionary says Visitor which I think means visitor to the island
 gen visitor = .
 replace visitor = 0 if P_VIS == "N"
 replace visitor = 1 if P_VIS == "Y"
@@ -341,28 +346,28 @@ label define _disposition   1 "ward a1"
                             21 "ward c7"
                             22 "ward c8"
                             23 "ward c9"
-                            24 "AHDU"
-                            25 "AICU"
+                            24 "High Depency Unit"
+                            25 "Intensive care"
                             26 "labour ward"
                             27 "medical ICU"
-                            28 "ANICU"
+                            28 "Neonatal ICU"
                             29 "operating theatre"
                             30 "paediatric ICU"
-                            31 "ARR"
-                            32 "ASICU"
+                            31 "Recovery room"
+                            32 "Surgical ICU"
                             33 "discharged"
                             34 "DFC"
                             35 "DH"
                             36 "died"
                             37 "discharged to labour ward"
-                            38 "DOA"
+                            38 "Dead on arrival"
                             39 "DPC"
                             40 "DPD"
                             41 "FT"
                             42 "GH"
                             43 "left against med advise"
                             44 "left w/o treatment"
-                            45 "OPD"
+                            45 "Outpatient Dept"
                             46 "sent to psych hosp"
 ; 
 #delimit cr 
