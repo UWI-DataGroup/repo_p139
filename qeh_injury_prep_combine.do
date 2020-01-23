@@ -26,6 +26,7 @@
 
 use "`datapath'\version01\2-working\qeh_injury_2016", clear
 append using "`datapath'\version01\2-working\qeh_injury_2017"
+append using "`datapath'\version01\2-working\qeh_injury_2018"
 append using "`datapath'\version01\2-working\qeh_injury_2019"
 
 label data "QEH Injury data: 2016 to 2019"
