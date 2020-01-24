@@ -33,8 +33,12 @@
 ** Full dataset 
 import excel using "`datapath'/version01/1-input/AED Log for January-December 2018.xlsx", first
 
+<<<<<<< HEAD
+drop P_FNUM C D E P_PHONE
+=======
 ***Only file where P_LNAME etc are not named CDE
 drop P_FNUM P_LNAME P_FNAME P_NRN P_PHONE
+>>>>>>> d6611c826baf74c3c593040a463941665853ca13
 
 ** Unique identifier
 rename P_SNUM did 
