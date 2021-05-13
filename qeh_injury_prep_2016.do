@@ -39,7 +39,7 @@
 import excel using "`datapath'/version01/1-input/AED Log January 2016-December 2016.xlsx", first
 
 drop P_FNUM C D E P_PHONE
-/*
+
 ** Unique identifier
 rename P_SNUM did 
 label var did "Participant identifier: daily identifier?"
