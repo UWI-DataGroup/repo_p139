@@ -71,8 +71,8 @@ gen tweek = yw(yoa, woy)
 	format tweek %tw
 collapse yoa woy (sum) numinj, by(tweek)
 
-** Calculate a 3-week rolling average injury total
-gen inj3 = (numinj[_n-1] + numinj + numinj[_n+1]) / 3
+** Calculate a 5-week rolling average injury total
+gen inj3 = (numinj[_n-2] + numinj + numinj[_n+2]) / 5
 
 
 #delimit ;
@@ -89,7 +89,7 @@ gen inj3 = (numinj[_n-1] + numinj + numinj[_n+1]) / 3
 
 			xtitle("Week of the year", margin(t=3) size(3.5))
 
-            ylab(100(50)300, labs(medium) nogrid glc(gs14) angle(0) format(%9.0f))
+            ylab(0(50)200, labs(medium) nogrid glc(gs14) angle(0) format(%9.0f))
 			ytitle("Number of injuries admitted per week", margin(r=3) size(3.5))
 
 			legend(size(3) position(12) bm(t=1 b=0 l=0 r=0) colf cols(1)
